@@ -34,11 +34,10 @@ public class RobotMap {
 	public static final int RIGHT_DRIVE_MOTOR_2 = 4;
 	public static final int RIGHT_DRIVE_MOTOR_3 = 5;
 	
-	public static final int SHOOTER_WHEEL_FWD = 10;
-	public static final int SHOOTER_WHEEL_AFT = 11;
+	public static final int SHOOTER_MOTOR = 7;
 	
-	public static final int INTAKE_MOTOR_1 = 7;
-	public static final int INTAKE_MOTOR_2 = 8;
+	public static final int INTAKE_MOTOR_1 = 10;
+	public static final int INTAKE_MOTOR_2 = 11;
 	
 	public static final int HOPPER_MOTOR = 9;
 	
@@ -158,7 +157,7 @@ public class RobotMap {
 	public static final double WARNING_CURRENT_LIMIT = 20;
 	public static final double STALL_CURRENT_LIMIT = 35;
 
-	public final static int SHOOTER_MOTOR_FWD_PDP = 0;
-	public final static int SHOOTER_MOTOR_AFT_PDP = 15;
+	public final static int SHOOTER_MOTOR_FWD_PDP = 8;
+	public final static int SHOOTER_MOTOR_AFT_PDP = 9;
 	
 }

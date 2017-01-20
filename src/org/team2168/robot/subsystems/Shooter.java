@@ -18,8 +18,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * @author Krystina
  */
 public class Shooter extends Subsystem {
-	private Spark shooterFWD;
-	private Spark shooterAFT;
+	private Spark shooterMotor;
 	private AverageEncoder shooterEncoder;
 	private AnalogInput shooterDistanceSensor;
 	
@@ -47,15 +46,10 @@ public class Shooter extends Subsystem {
 	private Shooter () {
 		
 		
-			shooterFWD = new Spark (RobotMap.SHOOTER_WHEEL_FWD);
-			shooterFWD.setExpiration(0.1);
-			shooterFWD.setSafetyEnabled(true);
-			
-			shooterAFT = new Spark (RobotMap.SHOOTER_WHEEL_AFT);
-			shooterAFT.setExpiration(0.1);
-			shooterAFT.setSafetyEnabled(true);
+			shooterMotor = new Spark (RobotMap.SHOOTER_MOTOR);
+			shooterMotor.setExpiration(0.1);
+			shooterMotor.setSafetyEnabled(true);
 		
-
 		shooterEncoder = new AverageEncoder(RobotMap.SHOOTER_ENCODER_A, 
 				   							   RobotMap.SHOOTER_ENCODER_B, //uncomment for encoder
 				   							   RobotMap.SHOOTER_ENCODER_PULSE_PER_ROT,
@@ -111,7 +105,6 @@ public class Shooter extends Subsystem {
 	 */
 	public void driveShooter(double speed) {
 		driveFWDShooterWheel(speed);
-		driveAFTShooterWheel(speed);
 		
 	}
 	
@@ -124,22 +117,10 @@ public class Shooter extends Subsystem {
 		if(RobotMap.REVERSE_SHOOTER_WHEEL_FWD)
 			speed = -speed;
 		
-		shooterFWD.set(speed);
+		shooterMotor.set(speed);
 		FWDMotorVoltage = Robot.pdp.getBatteryVoltage() * speed;
 	}
 	
-	/**
-	 * Takes in a speed and drives the second shooter wheel in a positive or inward direction
-	 * @param speed -1 to 1
-	 * @author Krystina
-	 */
-	public void driveAFTShooterWheel(double speed) {
-		if(RobotMap.REVERSE_SHOOTER_WHEEL_AFT)
-			speed = -speed;
-			
-		shooterAFT.set(speed);
-		AFTMotorVoltage = Robot.pdp.getBatteryVoltage() * speed;
-	}
 	
 	/**
 	 * Gets the speed of the shooter wheel

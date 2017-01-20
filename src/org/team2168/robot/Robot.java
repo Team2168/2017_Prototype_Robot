@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
+import org.team2168.robot.RobotMap;
 import org.team2168.robot.subsystems.Drivetrain;
 import org.team2168.robot.subsystems.Hopper;
 import org.team2168.robot.subsystems.Intake;
@@ -22,13 +23,13 @@ import org.team2168.robot.utils.PowerDistribution;
  */
 public class Robot extends IterativeRobot {
 
-	public static OI oi;
+
 	public static Drivetrain drivetrain;
 	public static Intake intake;
 	public static Hopper hopper;
 	public static Shooter shooter;
 	public static PowerDistribution pdp;
-
+	public static OI oi;
     Command autonomousCommand;
 
     /**
@@ -39,14 +40,17 @@ public class Robot extends IterativeRobot {
     	ConsolePrinter.init();
     	ConsolePrinter.setRate(RobotMap.CONSOLE_PRINTER_LOG_RATE_MS);
     	
-		oi = OI.getInstance();
+		
         // instantiate the command used for the autonomous period
         drivetrain = Drivetrain.getInstance();
         intake = Intake.getInstance();
         hopper = Hopper.getInstance();
         shooter = Shooter.getInstance();
-        
+        oi = OI.getInstance();
 		ConsolePrinter.startThread();
+		
+		pdp = new PowerDistribution(RobotMap.PDPThreadPeriod);
+		pdp.startThread();
     }
 	
 	public void disabledPeriodic() {
