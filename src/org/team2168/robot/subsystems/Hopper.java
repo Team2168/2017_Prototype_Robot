@@ -15,7 +15,7 @@ public class Hopper extends Subsystem {
 	
 	private static Hopper instance = null;
 	
-	public Hopper() {
+	private Hopper() {
 		hopperMotor = new Victor(RobotMap.HOPPER_MOTOR);
 	}
 	

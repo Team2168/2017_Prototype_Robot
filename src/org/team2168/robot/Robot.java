@@ -11,6 +11,7 @@ import org.team2168.robot.subsystems.Hopper;
 import org.team2168.robot.subsystems.Intake;
 import org.team2168.robot.subsystems.Shooter;
 import org.team2168.robot.utils.consoleprinter.ConsolePrinter;
+import org.team2168.robot.utils.PowerDistribution;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -26,6 +27,7 @@ public class Robot extends IterativeRobot {
 	public static Intake intake;
 	public static Hopper hopper;
 	public static Shooter shooter;
+	public static PowerDistribution pdp;
 
     Command autonomousCommand;
 
@@ -39,10 +41,10 @@ public class Robot extends IterativeRobot {
     	
 		oi = OI.getInstance();
         // instantiate the command used for the autonomous period
-        drivetrain = new Drivetrain();
-        intake = new Intake();
-        hopper = new Hopper();
-        shooter = new Shooter();
+        drivetrain = Drivetrain.getInstance();
+        intake = Intake.getInstance();
+        hopper = Hopper.getInstance();
+        shooter = Shooter.getInstance();
         
 		ConsolePrinter.startThread();
     }

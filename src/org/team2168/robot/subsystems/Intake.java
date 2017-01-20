@@ -16,7 +16,7 @@ public class Intake extends Subsystem {
 	
 	private static Intake instance = null;
 	
-	public Intake() {
+	private Intake() {
 		intakeMotor1 = new Victor(RobotMap.INTAKE_MOTOR_1);
 		intakeMotor2 = new Victor(RobotMap.INTAKE_MOTOR_2);
 		

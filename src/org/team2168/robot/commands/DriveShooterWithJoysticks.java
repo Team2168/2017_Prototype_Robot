@@ -7,15 +7,15 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveShooter extends Command {
+public class DriveShooterWithJoysticks extends Command {
 
-	double speed;
-	
-    public DriveShooter(double inputSpeed) {
+	/**
+	 *Drives both shooter wheels with the operator joystick
+	 *@author Krystina
+	 */
+    public DriveShooterWithJoysticks() {
         // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.shooter);
-    	speed = inputSpeed;
+       requires(Robot.shooter);
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +24,7 @@ public class DriveShooter extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.driveShooter(speed);
+    	Robot.shooter.driveShooter(Robot.oi.operatorJoystick.getLeftStickRaw_Y());
     }
 
     // Make this return true when this Command no longer needs to run execute()

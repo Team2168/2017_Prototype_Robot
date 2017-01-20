@@ -28,7 +28,7 @@ public class Drivetrain extends Subsystem {
 	
 	private static Drivetrain instance = null;
 	
-	public Drivetrain() {
+	private Drivetrain() {
 		LeftMotor1 = new Victor(RobotMap.LEFT_DRIVE_MOTOR_1);
 		LeftMotor2 = new Victor(RobotMap.LEFT_DRIVE_MOTOR_2);
 		LeftMotor3 = new Victor(RobotMap.LEFT_DRIVE_MOTOR_3);
