@@ -24,7 +24,7 @@ public class IntakeBall extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
-    	addParallel(new DriveIntake(speed));
-    	addParallel(new DriveHopper(speed));
+    	addParallel(new DriveIntakeWithConstant(speed));
+    	addParallel(new DriveHopperWithConstant(speed));
     }
 }

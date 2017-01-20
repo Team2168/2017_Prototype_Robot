@@ -1,8 +1,10 @@
 package org.team2168.robot.subsystems;
 
 import org.team2168.robot.RobotMap;
-import org.team2168.robot.commands.DriveIntake;
+import org.team2168.robot.commands.DriveIntakeWithConstant;
+import org.team2168.robot.commands.DriveIntakeWithJoystick;
 
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -11,30 +13,24 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Intake extends Subsystem {
 
-	private static Victor intakeMotor1;
-	private static Victor intakeMotor2;
+	private static Spark intakeMotor;
 	
-	private static Intake instance = null;
+	static Intake instance = null;
 	
 	public Intake() {
-		intakeMotor1 = new Victor(RobotMap.INTAKE_MOTOR_1);
-		intakeMotor2 = new Victor(RobotMap.INTAKE_MOTOR_2);
+		intakeMotor = new Spark(RobotMap.INTAKE_MOTOR);
 		
 	}
 	
-	public static Intake getInstance(){
+	public static Intake getInstance() {
 		if(instance == null)
-			instance = new Intake();
+		   instance = new Intake();
 		
 		return instance;
 	}
 	
 	public void driveIntakeMotor1(double speed) {
-		intakeMotor1.set(speed);
-	}
-	
-	public void driveIntakeMotor2(double speed) {
-		intakeMotor2.set(speed);
+		intakeMotor.set(speed);
 	}
 
 	/**
@@ -43,11 +39,10 @@ public class Intake extends Subsystem {
 	 */
 	public void driveIntake(double speed) {
 		driveIntakeMotor1(speed);
-		driveIntakeMotor2(speed);
 	}
 	
     public void initDefaultCommand() {
-        setDefaultCommand(new DriveIntake(0));
+        setDefaultCommand(new DriveIntakeWithJoystick());
     }
 }
 

@@ -1,19 +1,15 @@
 package org.team2168.robot.commands;
 
-import org.team2168.robot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class DriveHopper extends Command {
-	
-	double speed;
+public class DriveWithConstant extends Command {
 
-    public DriveHopper(double inputspeed) {
-        requires(Robot.intake);
-        speed = inputspeed;
+    public DriveWithConstant() {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -22,7 +18,6 @@ public class DriveHopper extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.hopper.driveHopperMotor(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

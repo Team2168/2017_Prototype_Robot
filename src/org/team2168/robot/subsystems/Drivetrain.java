@@ -26,7 +26,7 @@ public class Drivetrain extends Subsystem {
 	private static Encoder RightEncoder;
 	private static Encoder LeftEncoder;
 	
-	private static Drivetrain instance = null;
+	static Drivetrain instance = null;
 	
 	public Drivetrain() {
 		LeftMotor1 = new Victor(RobotMap.LEFT_DRIVE_MOTOR_1);

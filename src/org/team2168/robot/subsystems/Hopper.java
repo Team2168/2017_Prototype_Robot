@@ -1,7 +1,7 @@
 package org.team2168.robot.subsystems;
 
 import org.team2168.robot.RobotMap;
-import org.team2168.robot.commands.DriveHopper;
+import org.team2168.robot.commands.DriveHopperWithConstant;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -13,7 +13,7 @@ public class Hopper extends Subsystem {
 
 	private static Victor hopperMotor;
 	
-	private static Hopper instance = null;
+	static Hopper instance = null;
 	
 	public Hopper() {
 		hopperMotor = new Victor(RobotMap.HOPPER_MOTOR);
@@ -31,7 +31,7 @@ public class Hopper extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-        setDefaultCommand(new DriveHopper(0));
+        setDefaultCommand(new DriveHopperWithConstant(0));
     }
 }
 

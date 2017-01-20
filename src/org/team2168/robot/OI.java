@@ -1,6 +1,7 @@
 package org.team2168.robot;
 
-import org.team2168.robot.commands.DriveShooter;
+import org.team2168.robot.commands.DriveIntakeWithConstant;
+import org.team2168.robot.commands.DriveShooterWithConstant;
 import org.team2168.robot.commands.IntakeBall;
 import org.team2168.robot.utils.F310;
 
@@ -39,18 +40,18 @@ public class OI {
     // Start the command when the button is released  and let it run the command
     // until it is finished as determined by it's isFinished method.
     // button.whenReleased(new ExampleCommand());
-	private static OI instance = null;
-	
+
 	public static F310 driverJoystick = new F310(0);
 	public static F310 operatorJoystick = new F310(1);
-
+	
+	static OI instance = null;
 	/**
 	 * Private constructor for singleton class which instantiates the OI object
 	 */
 	private OI() {
-		operatorJoystick.ButtonA().whenPressed(new IntakeBall(0.7));
-		operatorJoystick.ButtonB().whenPressed(new IntakeBall(-0.7));
-		operatorJoystick.ButtonX().whenPressed(new DriveShooter(0.7));
+		driverJoystick.ButtonA().whenPressed(new IntakeBall(1));
+		driverJoystick.ButtonB().whenPressed(new IntakeBall(-1));
+		driverJoystick.ButtonX().whenPressed(new DriveShooterWithConstant(0.6));
 	}
 
 	/**
@@ -59,7 +60,7 @@ public class OI {
 	 */
 	public static OI getInstance(){
 		if(instance == null)
-			instance = new OI();
+		   instance = new OI();
 
 		return instance;
 	}

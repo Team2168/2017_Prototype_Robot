@@ -7,15 +7,13 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveShooter extends Command {
-
-	double speed;
+public class DriveIntakeWithConstant extends Command {
 	
-    public DriveShooter(double inputSpeed) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.shooter);
-    	speed = inputSpeed;
+	double speed;
+
+    public DriveIntakeWithConstant(double inputspeed) {
+        requires(Robot.intake);
+        speed = inputspeed;
     }
 
     // Called just before this Command runs the first time
@@ -24,7 +22,7 @@ public class DriveShooter extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.shooter.driveShooterMotor(speed);
+    	Robot.intake.driveIntake(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -34,10 +32,12 @@ public class DriveShooter extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.intake.driveIntake(0);
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	end();
     }
 }

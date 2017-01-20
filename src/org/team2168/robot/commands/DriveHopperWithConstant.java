@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class DriveIntake extends Command {
+public class DriveHopperWithConstant extends Command {
 	
 	double speed;
 
-    public DriveIntake(double inputspeed) {
-        requires(Robot.intake);
+    public DriveHopperWithConstant(double inputspeed) {
+        requires(Robot.hopper);
         speed = inputspeed;
     }
 
@@ -22,7 +22,7 @@ public class DriveIntake extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.intake.driveIntake(speed);
+    	Robot.hopper.driveHopperMotor(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

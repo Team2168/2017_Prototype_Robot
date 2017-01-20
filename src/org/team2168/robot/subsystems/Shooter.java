@@ -14,7 +14,7 @@ public class Shooter extends Subsystem {
 
 	private static Victor shooterMotor;
 	private static Encoder shooterEncoder;
-	private static Shooter instance = null;
+	static Shooter instance = null;
 	
 	public Shooter() {
 		shooterMotor = new Victor(RobotMap.SHOOTER_MOTOR);
