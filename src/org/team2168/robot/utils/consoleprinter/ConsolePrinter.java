@@ -207,7 +207,7 @@ public class ConsolePrinter {
 			//Build string
 			while(i.hasNext()) {
 				key = i.next();
-				output.concat(key + "\t");
+				output = output.concat(key + "\t");
 			}
 		}
 		return output;
@@ -226,8 +226,9 @@ public class ConsolePrinter {
 			//Build string
 			while(i.hasNext()) {
 				key = i.next();
-				output.concat(data.get(key).valueToString() + "\t");
+				output = output.concat(data.get(key).valueToString() + "\t");
 			}
+
 			if(log != null) {
 				//send string to log file
 				log.println(output);

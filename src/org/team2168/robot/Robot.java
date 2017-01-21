@@ -47,6 +47,8 @@ public class Robot extends IterativeRobot {
         hopper = Hopper.getInstance();
         shooter = Shooter.getInstance();
         oi = OI.getInstance();
+        
+        //ConsolePrinter must be started after subsystems are initialized
 		ConsolePrinter.startThread();
 		
 		pdp = new PowerDistribution(RobotMap.PDPThreadPeriod);

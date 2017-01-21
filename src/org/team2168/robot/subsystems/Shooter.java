@@ -62,11 +62,7 @@ public class Shooter extends Subsystem {
 				   							   RobotMap.SHOOTER_POS_RETURN_TYPE,
 				   							   RobotMap.SHOOTER_AVG_ENCODER_VAL);
 		
-		shooterEncoder.setMinRate(RobotMap.SHOOTER_ENCODER_MIN_RATE);
-		
-		//Log sensor data
-		ConsolePrinter.putNumber("Shooter Encoder", Shooter::getPosition, true, false);
-		
+		shooterEncoder.setMinRate(RobotMap.SHOOTER_ENCODER_MIN_RATE);		
 		
 		//Spawn new PID Controller
 		shooterSpeedController = new PIDSpeed(
@@ -89,6 +85,9 @@ public class Shooter extends Subsystem {
 		
 		AFTMotorVoltage = 0;
 		FWDMotorVoltage = 0;
+		
+		//Log sensor data
+		ConsolePrinter.putNumber("Shooter Encoder", Shooter::getPosition, true, true);
 	}
 	
 	/**
