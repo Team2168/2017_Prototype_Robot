@@ -8,8 +8,10 @@ import org.team2168.robot.PID.sensors.AverageEncoder;
 import org.team2168.robot.commands.DriveShooterWithJoysticks;
 import org.team2168.robot.utils.TCPSocketSender;
 import org.team2168.robot.utils.Util;
+import org.team2168.robot.utils.consoleprinter.ConsolePrinter;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -19,7 +21,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Shooter extends Subsystem {
 	private Spark shooterMotor;
-	private AverageEncoder shooterEncoder;
+	private static AverageEncoder shooterEncoder;
 	private AnalogInput shooterDistanceSensor;
 	
 	//TODO calibrate values
@@ -61,6 +63,9 @@ public class Shooter extends Subsystem {
 				   							   RobotMap.SHOOTER_AVG_ENCODER_VAL);
 		
 		shooterEncoder.setMinRate(RobotMap.SHOOTER_ENCODER_MIN_RATE);
+		
+		//Log sensor data
+		ConsolePrinter.putNumber("Shooter Encoder", Shooter::getPosition, true, false);
 		
 		
 		//Spawn new PID Controller
@@ -185,9 +190,11 @@ public class Shooter extends Subsystem {
     	setDefaultCommand(new DriveShooterWithJoysticks());
     }
 
-	public double getPosition() {
+	public static double getPosition() {
 		// TODO Auto-generated method stub
 		return shooterEncoder.getPos();
 	}
+	
+
 }
 

@@ -228,10 +228,13 @@ public class ConsolePrinter {
 				key = i.next();
 				output.concat(data.get(key).valueToString() + "\t");
 			}
-			
-			//send string to log file
-			log.println(output);
-			log.flush();
+			if(log != null) {
+				//send string to log file
+				log.println(output);
+				log.flush();
+			} else {
+				System.out.println("Log file is null");
+			}
 		}
 	}
 	/**
