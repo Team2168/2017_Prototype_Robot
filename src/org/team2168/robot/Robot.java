@@ -37,12 +37,13 @@ public class Robot extends IterativeRobot {
     	ConsolePrinter.init();
     	ConsolePrinter.setRate(RobotMap.CONSOLE_PRINTER_LOG_RATE_MS);
     	
-		oi = OI.getInstance();
         // instantiate the command used for the autonomous period
         drivetrain = new Drivetrain();
         intake = new Intake();
         hopper = new Hopper();
         shooter = new Shooter();
+        
+        oi = OI.getInstance();
         
 		ConsolePrinter.startThread();
     }

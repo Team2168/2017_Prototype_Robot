@@ -12,8 +12,8 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Hopper extends Subsystem {
 
 	private static Victor hopperMotor;
-	
 	private static Hopper instance = null;
+	
 	
 	public Hopper() {
 		hopperMotor = new Victor(RobotMap.HOPPER_MOTOR);
@@ -27,6 +27,9 @@ public class Hopper extends Subsystem {
 	}
 	
 	public void driveHopperMotor(double speed) {
+		if(RobotMap.INVERT_HOPPER_MOTOR)
+			speed = speed * -1.0;
+		
 		hopperMotor.set(speed);
 	}
 

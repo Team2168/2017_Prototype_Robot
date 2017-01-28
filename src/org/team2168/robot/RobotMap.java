@@ -39,6 +39,10 @@ public class RobotMap {
 	
 	public static final int HOPPER_MOTOR = 9;
 	
+	public static final boolean INVERT_HOPPER_MOTOR = true;
+	//public static final boolean INVERT_INTAKE_MOTOR_1 = true;
+	//public static final boolean INVERT_INTAKE_MOTOR_2 = true;
+	
 	
 	/////////////DIO///////////////
 	public static final int LEFT_DRIVE_ENCODER_A = 0;
