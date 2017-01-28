@@ -49,7 +49,8 @@ public class OI {
 	 */
 	private OI() {
 		operatorJoystick.ButtonA().whenPressed(new IntakeBall(0.7));
-		operatorJoystick.ButtonB().whenPressed(new IntakeBall(-0.7));
+		operatorJoystick.ButtonY().whenPressed(new IntakeBall(-0.7));
+		operatorJoystick.ButtonB().whenPressed(new IntakeBall(0.0));
 		operatorJoystick.ButtonX().whenPressed(new DriveShooter(0.7));
 	}
 

@@ -12,7 +12,7 @@ public class DriveHopper extends Command {
 	double speed;
 
     public DriveHopper(double inputspeed) {
-        requires(Robot.intake);
+        requires(Robot.hopper);
         speed = inputspeed;
     }
 
