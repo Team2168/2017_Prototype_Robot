@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.team2168.robot.RobotMap;
 import org.team2168.robot.subsystems.Drivetrain;
 import org.team2168.robot.subsystems.Hopper;
+import org.team2168.robot.subsystems.Indexer;
 import org.team2168.robot.subsystems.Intake;
 import org.team2168.robot.subsystems.Shooter;
 import org.team2168.robot.utils.consoleprinter.ConsolePrinter;
@@ -28,6 +29,7 @@ public class Robot extends IterativeRobot {
 	public static Intake intake;
 	public static Hopper hopper;
 	public static Shooter shooter;
+	public static Indexer indexer;
 	public static PowerDistribution pdp;
 	public static OI oi;
     Command autonomousCommand;
@@ -46,6 +48,7 @@ public class Robot extends IterativeRobot {
         intake = Intake.getInstance();
         hopper = Hopper.getInstance();
         shooter = Shooter.getInstance();
+        indexer = Indexer.getInstance();
         oi = OI.getInstance();
         
         //ConsolePrinter must be started after subsystems are initialized

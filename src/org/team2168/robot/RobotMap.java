@@ -41,6 +41,8 @@ public class RobotMap {
 	
 	public static final int HOPPER_MOTOR = 9;
 	
+	public static final int INDEXER_MOTOR = 8;
+	
 	
 	/////////////DIO///////////////
 	public static final int LEFT_DRIVE_ENCODER_A = 0;
