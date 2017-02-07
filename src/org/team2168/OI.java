@@ -1,7 +1,11 @@
-package org.team2168.robot;
+package org.team2168;
 
+
+import org.team2168.robot.commands.DriveIntake;
 import org.team2168.robot.commands.DriveShooter;
 import org.team2168.robot.commands.IntakeBall;
+import org.team2168.robot.commands.shooter.PIDCommands.DriveShooterPIDSpeed;
+import org.team2168.robot.commands.shooter.PIDCommands.ShooterPIDPause;
 import org.team2168.robot.utils.F310;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -48,9 +52,27 @@ public class OI {
 	 * Private constructor for singleton class which instantiates the OI object
 	 */
 	private OI() {
-		operatorJoystick.ButtonA().whenPressed(new IntakeBall(0.7));
-		operatorJoystick.ButtonB().whenPressed(new IntakeBall(-0.7));
-		operatorJoystick.ButtonX().whenPressed(new DriveShooter(0.7));
+		//operatorJoystick.ButtonA().whenPressed(new IntakeBall(0.7));
+		//operatorJoystick.ButtonB().whenPressed(new IntakeBall(-0.7));
+		
+		
+		//Kill Shooter (B)
+				operatorJoystick.ButtonB().whenPressed(new ShooterPIDPause());
+
+				
+				//Shoot Far Preset (Y)
+				operatorJoystick.ButtonY().whenPressed(new DriveShooterPIDSpeed(6700));
+
+				
+				//Shoot Close Preset (X)
+				operatorJoystick.ButtonX().whenPressed(new DriveShooterPIDSpeed(4000));
+				
+				operatorJoystick.ButtonA().whenPressed(new DriveShooterPIDSpeed());
+				//operatorJoystick.ButtonA().whenPressed(new DriveShooter(0.49));
+				
+				
+				operatorJoystick.ButtonRightBumper().whileHeld(new DriveIntake(0.75));
+
 	}
 
 	/**

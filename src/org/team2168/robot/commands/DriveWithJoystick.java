@@ -1,7 +1,7 @@
 package org.team2168.robot.commands;
 
-import org.team2168.robot.OI;
-import org.team2168.robot.Robot;
+import org.team2168.OI;
+import org.team2168.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -25,7 +25,7 @@ public class DriveWithJoystick extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     
-    	Robot.drivetrain.driveRobot(OI.driverJoystick.getRawAxis(1),OI.driverJoystick.getRawAxis(5));
+    	Robot.drivetrain.driveRobot(OI.driverJoystick.getLeftStickRaw_Y(),OI.driverJoystick.getRightStickRaw_Y());
 
   
     }

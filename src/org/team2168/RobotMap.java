@@ -1,4 +1,4 @@
-package org.team2168.robot;
+package org.team2168;
 
 import java.text.DecimalFormat;
 
@@ -32,12 +32,12 @@ public class RobotMap {
 	
 	public static final int RIGHT_DRIVE_MOTOR_1 = 3;
 	public static final int RIGHT_DRIVE_MOTOR_2 = 4;
-	public static final int RIGHT_DRIVE_MOTOR_3 = 5;
+	public static final int RIGHT_DRIVE_MOTOR_3 = 10;
 	
 	public static final int SHOOTER_MOTOR = 7;
 	
-	public static final int INTAKE_MOTOR_1 = 10;
-	public static final int INTAKE_MOTOR_2 = 11;
+	public static final int INTAKE_MOTOR_1 = 6;
+	//public static final int INTAKE_MOTOR_2 = 8;
 	
 	public static final int HOPPER_MOTOR = 9;
 	
@@ -58,7 +58,7 @@ public class RobotMap {
 	 *                         Shooter PARAMETERS
 	 *************************************************************************/
 	//TODO check if the reverse values match the physical robot
-	public static final boolean REVERSE_SHOOTER_WHEEL_FWD= false;
+	public static final boolean REVERSE_SHOOTER_WHEEL_FWD= true;
 	public static final boolean REVERSE_SHOOTER_WHEEL_AFT= false;
 	
 	private static final int SHOOTER_PULSE_PER_ROTATION = 256; //encoder ticks per rotation

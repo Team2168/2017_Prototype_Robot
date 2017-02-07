@@ -1,8 +1,8 @@
 package org.team2168.robot.subsystems;
 
+import org.team2168.RobotMap;
 import org.team2168.robot.subsystems.Drivetrain;
 import org.team2168.robot.utils.consoleprinter.ConsolePrinter;
-import org.team2168.robot.RobotMap;
 import org.team2168.robot.commands.DriveWithJoystick;
 
 import edu.wpi.first.wpilibj.Victor;

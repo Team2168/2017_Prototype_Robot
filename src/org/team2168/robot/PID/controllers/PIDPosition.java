@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimerTask;
 
-import org.team2168.robot.Robot;
+import org.team2168.Robot;
 import org.team2168.robot.PID.sensors.PIDSensorInterface;
 import org.team2168.robot.utils.TCPMessageInterface;
 

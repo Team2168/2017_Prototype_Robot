@@ -1,12 +1,12 @@
 
-package org.team2168.robot;
+package org.team2168;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-import org.team2168.robot.RobotMap;
+import org.team2168.RobotMap;
 import org.team2168.robot.subsystems.Drivetrain;
 import org.team2168.robot.subsystems.Hopper;
 import org.team2168.robot.subsystems.Intake;

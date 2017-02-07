@@ -1,7 +1,7 @@
 package org.team2168.robot.subsystems;
 
-import org.team2168.robot.Robot;
-import org.team2168.robot.RobotMap;
+import org.team2168.Robot;
+import org.team2168.RobotMap;
 import org.team2168.robot.PID.controllers.PIDSpeed;
 import org.team2168.robot.PID.sensors.AverageCounter;
 import org.team2168.robot.PID.sensors.AverageEncoder;
@@ -87,7 +87,7 @@ public class Shooter extends Subsystem {
 		FWDMotorVoltage = 0;
 		
 		//Log sensor data
-		ConsolePrinter.putNumber("Shooter Encoder", Shooter::getPosition, true, true);
+		ConsolePrinter.putNumber("Shooter Encoder", Shooter::getSpeed, true, true);
 	}
 	
 	/**
@@ -130,7 +130,7 @@ public class Shooter extends Subsystem {
 	 * Gets the speed of the shooter wheel
 	 * @return speed in RPM
 	 */
-	public double getSpeed() {
+	public static double getSpeed() {
 		return shooterEncoder.getRate();
 	}
 	

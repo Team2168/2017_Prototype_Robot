@@ -1,6 +1,6 @@
 package org.team2168.robot.subsystems;
 
-import org.team2168.robot.RobotMap;
+import org.team2168.RobotMap;
 import org.team2168.robot.commands.DriveHopper;
 
 import edu.wpi.first.wpilibj.Victor;
